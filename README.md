@@ -34,3 +34,19 @@ The development workflow goes like this :
     Note that all these changes took place in your created branch \<branch-name> , and you can delete whatever changes you made by deleting the branch. The above command pushed youur code online to your github repository.
     
 6. Go to github's online repository and you can see an option of `Compare and Pull request` against your recently pushed branches. Make a Pull request by entering a short meaningful message and a meaningful comment about what your pull request does.
+7.Remote repositories make it possible for you to collaborate with others on a Git project. Each remote repository is a version of the project that is hosted on the Internet or a network you have access to. Each remote repository should be accessible to you as either read-only or read-write, depending on your user privileges.
+
+In order to be able to sync changes you make in a fork with the original repository you’re working with, you need to configure a remote that references the upstream repository. You should set up the remote to the upstream repository only once.
+
+Let’s first check which remote servers you have configured. The git remote command will list whatever remote repository you have already specified, so if you cloned your repository as we did above, you’ll at least see the origin repository, which is the default name given by Git for the cloned directory.
+
+From the directory of the repository in our terminal window, let’s use the git remote command along with the -v flag to display the URLs that Git has stored along with the relevant remote shortnames (as in “origin”):
+
+    git remote -v
+8.Once we have configured a remote that references the upstream and original repository on GitHub, we are ready to sync our fork of the repository to keep it up-to-date.
+
+To sync our fork, from the directory of our local repository in a terminal window, we’ll use the git fetch command to fetch the branches along with their respective commits from the upstream repository. Since we used the shortname “upstream” to refer to the upstream repository, we’ll pass that to the command:
+
+    git fetch upstream
+CONCLUSION:
+At this point, you have successfully sent a pull request to an open-source software repository. Following this, you should make sure to update and rebase your code while you are waiting to have it reviewed. Project maintainers may ask for you to rework your code, so you should be prepared to do so. 
